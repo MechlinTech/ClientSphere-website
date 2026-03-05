@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Shield } from 'lucide-react';
 
 export default function Navbar() {
   return (
@@ -7,7 +6,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <Shield className="w-7 h-7 text-blue-600" strokeWidth={2} />
+            <img src="/assets/logo.png" alt="ClientSphere" className="h-8 w-auto" />
             <span className="text-xl font-semibold text-gray-900">ClientSphere</span>
           </Link>
         </div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Shield className="w-6 h-6 text-blue-500" strokeWidth={2} />
+              <img src="/assets/logo.png" alt="ClientSphere" className="h-6 w-auto" />
               <span className="text-xl font-semibold text-white">ClientSphere</span>
             </div>
             <p className="text-sm leading-relaxed">
