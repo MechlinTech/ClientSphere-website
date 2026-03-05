@@ -3,7 +3,6 @@ import Hero from './components/Hero';
 import Problems from './components/Problems';
 import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
-import Security from './components/Security';
 import WhoItsFor from './components/WhoItsFor';
 import Comparison from './components/Comparison';
 import FinalCTA from './components/FinalCTA';
