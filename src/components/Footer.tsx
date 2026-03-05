@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm">
-            &copy; 2024 ClientSphere. All rights reserved.
+            &copy; 2026 ClientSphere. All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">
