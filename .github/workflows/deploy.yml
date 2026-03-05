@@ -1,0 +1,16 @@
+name: Deployment (Self-hosted)
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and Deploy
+        run: |
+          docker-compose -f docker/docker-compose.yml up -d --build
+          docker image prune -f
