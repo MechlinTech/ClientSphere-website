@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   web:
+    image: akshatpareek/clientsphere-website:latest
     build:
       context: ..
       dockerfile: docker/Dockerfile
