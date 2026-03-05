@@ -1,4 +1,5 @@
-import { Shield, Linkedin, Twitter, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Linkedin, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Shield className="w-6 h-6 text-blue-500" strokeWidth={2} />
+              <img src="/assets/logo.png" alt="ClientSphere" className="h-6 w-auto" />
               <span className="text-xl font-semibold text-white">ClientSphere</span>
             </div>
             <p className="text-sm leading-relaxed">
@@ -18,9 +19,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#security" className="hover:text-white transition-colors">Security</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+              <li><Link to="/features" className="hover:text-white transition-colors">Features</Link></li>
+              <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
               <li><a href="#integrations" className="hover:text-white transition-colors">Integrations</a></li>
             </ul>
           </div>

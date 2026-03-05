@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -16,9 +16,10 @@ export default function Hero() {
               Get a Demo
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="px-8 py-4 bg-white text-gray-900 font-medium rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all flex items-center gap-2">
-              <Play className="w-5 h-5" />
-              Start Free Trial
+            <button className="px-8 py-4 bg-white font-medium rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-all flex items-center gap-2">
+              <span className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent">
+                Contact Sales
+              </span>
             </button>
           </div>
         </div>

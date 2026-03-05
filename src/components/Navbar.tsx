@@ -1,19 +1,20 @@
-import { Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Shield className="w-7 h-7 text-blue-600" strokeWidth={2} />
-          <span className="text-xl font-semibold text-gray-900">ClientSphere</span>
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/assets/logo.png" alt="ClientSphere" className="h-8 w-auto" />
+            <span className="text-xl font-semibold text-gray-900">ClientSphere</span>
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-          <a href="#how-it-works" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">How It Works</a>
-          <a href="#security" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Security</a>
-          <a href="#pricing" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+          <Link to="/features" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Features</Link>
+          <Link to="/#how-it-works" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">How It Works</Link>
+          <Link to="/pricing" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Pricing</Link>
         </div>
 
         <div className="flex items-center gap-4">

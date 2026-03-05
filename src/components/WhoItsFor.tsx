@@ -1,36 +1,37 @@
-import { Code, Server, Briefcase, Palette, Building } from 'lucide-react';
+import { useId } from 'react';
 
 export default function WhoItsFor() {
+  const id = useId();
   const audiences = [
     {
-      icon: Code,
+      label: '01',
       title: 'Software Development Companies',
       description: 'Manage client projects with structured sprints, Azure DevOps integration, deliverable tracking, and technical documentation workflows.'
     },
     {
-      icon: Server,
+      label: '02',
       title: 'IT Service Providers',
       description: 'Coordinate infrastructure projects, manage SLAs, track implementation milestones, and maintain client communication in one platform.'
     },
     {
-      icon: Briefcase,
+      label: '03',
       title: 'Consulting Firms',
       description: 'Deliver client engagements with clear phase structures, budget oversight, document approval processes, and professional invoicing.'
     },
     {
-      icon: Palette,
+      label: '04',
       title: 'Product Agencies',
       description: 'Manage design and development cycles, client feedback loops, asset approvals, and project timelines with full transparency.'
     },
     {
-      icon: Building,
+      label: '05',
       title: 'Enterprise Teams',
       description: 'Coordinate cross-organizational initiatives with strict access control, compliance requirements, and multi-stakeholder governance.'
     }
   ];
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -41,27 +42,35 @@ export default function WhoItsFor() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {audiences.slice(0, 3).map((audience, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all">
-              <div className="bg-blue-100 rounded-lg p-3 w-fit mb-4">
-                <audience.icon className="w-6 h-6 text-blue-600" strokeWidth={2} />
-              </div>
+            <article
+              key={`${id}-${index}`}
+              className="group relative bg-white rounded-xl p-8 border border-gray-200/80 hover:border-transparent hover:shadow-xl hover:shadow-gray-900/5 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="inline-block text-3xl font-bold tracking-tight bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-4">
+                {audience.label}
+              </span>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">{audience.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{audience.description}</p>
-            </div>
+              <p className="text-gray-600 leading-relaxed text-[15px]">{audience.description}</p>
+            </article>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
           {audiences.slice(3).map((audience, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-200 hover:shadow-lg transition-all">
-              <div className="bg-blue-100 rounded-lg p-3 w-fit mb-4">
-                <audience.icon className="w-6 h-6 text-blue-600" strokeWidth={2} />
-              </div>
+            <article
+              key={`${id}-${index + 3}`}
+              className="group relative bg-white rounded-xl p-8 border border-gray-200/80 hover:border-transparent hover:shadow-xl hover:shadow-gray-900/5 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="inline-block text-3xl font-bold tracking-tight bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-4">
+                {audience.label}
+              </span>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">{audience.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{audience.description}</p>
-            </div>
+              <p className="text-gray-600 leading-relaxed text-[15px]">{audience.description}</p>
+            </article>
           ))}
         </div>
       </div>

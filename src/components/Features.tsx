@@ -1,9 +1,9 @@
-import { Lock, Users, FolderTree, BarChart3, FileCheck, Monitor, Receipt, Settings } from 'lucide-react';
+import { useId } from 'react';
 
 export default function Features() {
+  const id = useId();
   const features = [
     {
-      icon: Lock,
       title: 'Secure Authentication',
       description: 'Enterprise-grade security with email login, OAuth integrations, session management, and secure email invitations.',
       details: [
@@ -14,7 +14,6 @@ export default function Features() {
       ]
     },
     {
-      icon: Settings,
       title: 'Configurable Role-Based Access Control',
       description: 'Fully customizable permission system for both client-side and internal organization roles without default presets.',
       details: [
@@ -25,7 +24,6 @@ export default function Features() {
       ]
     },
     {
-      icon: Users,
       title: 'Organization Management',
       description: 'Complete control over organization structure, user lifecycle, and administrative oversight.',
       details: [
@@ -36,7 +34,6 @@ export default function Features() {
       ]
     },
     {
-      icon: FolderTree,
       title: 'Structured Project Management',
       description: 'Hierarchical project organization with Phase → Milestone → Sprint structure, Azure DevOps integration, and comprehensive tracking.',
       details: [
@@ -48,7 +45,6 @@ export default function Features() {
       ]
     },
     {
-      icon: BarChart3,
       title: 'Real-Time Dashboards',
       description: 'Visual insights into project health, budget utilization, timeline progress, and performance metrics.',
       details: [
@@ -60,7 +56,6 @@ export default function Features() {
       ]
     },
     {
-      icon: FileCheck,
       title: 'Document Governance & Approval Workflows',
       description: 'Controlled document management with approval workflows, version history, and audit trails.',
       details: [
@@ -73,7 +68,6 @@ export default function Features() {
       ]
     },
     {
-      icon: Monitor,
       title: 'Client Workspace',
       description: 'Dedicated client portal for monitoring project health, tracking milestones, and managing escalations.',
       details: [
@@ -85,7 +79,6 @@ export default function Features() {
       ]
     },
     {
-      icon: Receipt,
       title: 'Invoice Management',
       description: 'Project-level invoicing with complete tracking, status management, and downloadable invoices.',
       details: [
@@ -99,7 +92,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 px-6 bg-gray-50">
+    <section id="features" className="py-24 px-6 bg-gradient-to-b from-gray-50 via-white to-gray-50/80 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -108,29 +101,30 @@ export default function Features() {
           <p className="text-lg text-gray-600">
             A comprehensive platform designed for organizations that require control, transparency, and structured collaboration.
           </p>
+          <div className="mt-6 h-1 w-16 mx-auto rounded-full bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="bg-blue-100 rounded-lg p-3">
-                  <feature.icon className="w-6 h-6 text-blue-600" strokeWidth={2} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </div>
-              </div>
-              <ul className="space-y-2 ml-16">
+            <article
+              key={`${id}-${index}`}
+              className="group relative bg-white rounded-xl p-8 border border-gray-200/80 hover:border-transparent hover:shadow-xl hover:shadow-gray-900/5 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="inline-block text-2xl font-bold tracking-tight bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-4">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-[15px] mb-4">{feature.description}</p>
+              <ul className="space-y-2">
                 {feature.details.map((detail, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 flex-shrink-0"></div>
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 opacity-70" />
                     <span>{detail}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </div>
